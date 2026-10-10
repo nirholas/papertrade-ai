@@ -1,0 +1,27 @@
+# papertrade-ai
+
+> Trade Papertrade BTC and ETH perps from Claude, ChatGPT, Codex, Cursor, Gemini CLI and VS Code. MCP server with OAuth, non-custodial session keys and guardrails.
+
+papertrade-ai is an open-source repository by nirholas, part of the three.ws ecosystem.
+
+## Docs
+
+- [README](https://github.com/nirholas/papertrade-ai/blob/HEAD/README.md): install, usage and reference
+- [What you can ask](https://github.com/nirholas/papertrade-ai/blob/HEAD/README.md#what-you-can-ask)
+- [Install](https://github.com/nirholas/papertrade-ai/blob/HEAD/README.md#install)
+- [Tools](https://github.com/nirholas/papertrade-ai/blob/HEAD/README.md#tools)
+- [Security](https://github.com/nirholas/papertrade-ai/blob/HEAD/README.md#security)
+- [Develop and self-host](https://github.com/nirholas/papertrade-ai/blob/HEAD/README.md#develop-and-self-host)
+- [Risk](https://github.com/nirholas/papertrade-ai/blob/HEAD/README.md#risk)
+- [License](https://github.com/nirholas/papertrade-ai/blob/HEAD/README.md#license)
+- [AGENTS.md](https://github.com/nirholas/papertrade-ai/blob/HEAD/AGENTS.md): guidance for coding agents
+- [Full text for LLMs](https://github.com/nirholas/papertrade-ai/blob/HEAD/llms-full.txt): the README inlined
+
+## Project
+
+- [Source](https://github.com/nirholas/papertrade-ai)
+- [Issues](https://github.com/nirholas/papertrade-ai/issues)
+- [Discussions](https://github.com/nirholas/papertrade-ai/discussions)
+- [Homepage](https://papertrade-ai.ninabrekkerese.workers.dev)
+- [three.ws](https://three.ws): the platform this is part of
+- [All repositories by nirholas](https://github.com/nirholas/nirholas#readme)

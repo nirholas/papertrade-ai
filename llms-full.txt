@@ -1,0 +1,140 @@
+# papertrade-ai
+
+> Trade Papertrade BTC and ETH perps from Claude, ChatGPT, Codex, Cursor, Gemini CLI and VS Code. MCP server with OAuth, non-custodial session keys and guardrails.
+
+<div align="center">
+
+<a href="https://papertrade-ai.ninabrekkerese.workers.dev"><img src="https://papertrade-ai.ninabrekkerese.workers.dev/og.png" alt="Papertrade AI: trade perps from any AI. Claude, ChatGPT, Codex, Cursor, Gemini, VS Code." width="720"></a>
+
+# Papertrade AI
+
+**Trade Papertrade BTC and ETH perps from Claude, ChatGPT, Codex, Cursor, Gemini CLI, VS Code and any MCP client.**
+
+Open-source [Model Context Protocol](https://modelcontextprotocol.io) server with live markets, wallet analytics, liquidation maps, and guarded trading through non-custodial session keys.
+
+[![npm](https://img.shields.io/npm/v/papertrade-ai?style=flat-square&color=0a8f5b)](https://www.npmjs.com/package/papertrade-ai)
+[![MCP Registry](https://img.shields.io/badge/MCP_Registry-io.github.nirholas%2Fpapertrade--ai-0a8f5b?style=flat-square)](https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.nirholas/papertrade-ai)
+[![License: MIT](https://img.shields.io/badge/license-MIT-0a8f5b?style=flat-square)](LICENSE)
+[![Docs](https://img.shields.io/badge/docs-papertrade--ai-0a8f5b?style=flat-square)](https://papertrade-ai.ninabrekkerese.workers.dev/docs/)
+
+[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=papertrade&config=eyJ1cmwiOiJodHRwczovL3BhcGVydHJhZGUtYWkubmluYWJyZWtrZXJlc2Uud29ya2Vycy5kZXYvbWNwIn0%3D)
+[![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_Server-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=papertrade&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fpapertrade-ai.ninabrekkerese.workers.dev%2Fmcp%22%7D)
+
+[Website](https://papertrade-ai.ninabrekkerese.workers.dev) · [Docs](https://papertrade-ai.ninabrekkerese.workers.dev/docs/) · [Tools](https://papertrade-ai.ninabrekkerese.workers.dev/docs/tools) · [Security](https://papertrade-ai.ninabrekkerese.workers.dev/docs/security) · [REST API](https://papertrade-ai.ninabrekkerese.workers.dev/docs/rest-api)
+
+</div>
+
+```
+https://papertrade-ai.ninabrekkerese.workers.dev/mcp
+```
+
+One URL, OAuth 2.1, no API keys. Your wallet signs once to register a session key that **can trade but cannot withdraw**, and the server enforces the limits you choose: margin per trade, leverage, daily size, open positions and markets. Every trade is previewed and needs your confirmation.
+
+## What you can ask
+
+- "What are BTC and ETH doing on Papertrade right now?"
+- "Show me the Papertrade liquidation map for ETH."
+- "Who are the top 10 Papertrade traders this week? What are they holding?"
+- "Analyze wallet 0x...: win rate, biggest trade, equity curve."
+- "If I long BTC with $20 at 500x, where is my liquidation price?"
+- "Preview a $15 ETH short at 800x, then open it if I confirm."
+- "Close all my BTC positions."
+
+On clients with [MCP Apps](https://modelcontextprotocol.io/docs/extensions/apps) support (Claude, ChatGPT, VS Code, Goose) results render as an interactive trading card with a live chart.
+
+## Install
+
+| Client | Install |
+| --- | --- |
+| **Claude** (web, desktop, mobile) | Settings, Connectors, **Add custom connector**, paste `https://papertrade-ai.ninabrekkerese.workers.dev/mcp`. [Guide](https://papertrade-ai.ninabrekkerese.workers.dev/docs/claude) |
+| **Claude Code** | `/plugin marketplace add nirholas/papertrade-ai` then `/plugin install papertrade-ai@papertrade-ai`, or `claude mcp add --transport http papertrade https://papertrade-ai.ninabrekkerese.workers.dev/mcp` [Guide](https://papertrade-ai.ninabrekkerese.workers.dev/docs/claude#claude-code) |
+| **ChatGPT** | Settings, Apps, Advanced settings, **Developer mode**, Create app, paste the URL, OAuth. [Guide](https://papertrade-ai.ninabrekkerese.workers.dev/docs/chatgpt) |
+| **OpenAI Codex** | `codex mcp add papertrade --url https://papertrade-ai.ninabrekkerese.workers.dev/mcp` then `codex mcp login papertrade` [Guide](https://papertrade-ai.ninabrekkerese.workers.dev/docs/codex) |
+| **Cursor** | [One-click install](https://cursor.com/install-mcp?name=papertrade&config=eyJ1cmwiOiJodHRwczovL3BhcGVydHJhZGUtYWkubmluYWJyZWtrZXJlc2Uud29ya2Vycy5kZXYvbWNwIn0%3D) [Guide](https://papertrade-ai.ninabrekkerese.workers.dev/docs/cursor) |
+| **VS Code** (Copilot) | [One-click install](https://insiders.vscode.dev/redirect/mcp/install?name=papertrade&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fpapertrade-ai.ninabrekkerese.workers.dev%2Fmcp%22%7D) or `code --add-mcp '{"name":"papertrade","type":"http","url":"https://papertrade-ai.ninabrekkerese.workers.dev/mcp"}'` [Guide](https://papertrade-ai.ninabrekkerese.workers.dev/docs/vscode) |
+| **Gemini CLI** | `gemini extensions install https://github.com/nirholas/papertrade-ai` [Guide](https://papertrade-ai.ninabrekkerese.workers.dev/docs/gemini) |
+| **Claude Desktop** (local) | Download `papertrade-ai.mcpb` from [Releases](https://github.com/nirholas/papertrade-ai/releases/latest) and open it. |
+| **Windsurf, Zed, Cline, Goose, LibreChat, others** | Streamable HTTP URL above, or stdio `npx -y papertrade-ai`. [Guide](https://papertrade-ai.ninabrekkerese.workers.dev/docs/other-clients) |
+
+### Local (stdio)
+
+```json
+{
+  "mcpServers": {
+    "papertrade": { "command": "npx", "args": ["-y", "papertrade-ai"] }
+  }
+}
+```
+
+Run `npx -y papertrade-ai login` once to connect a wallet in your browser. Credentials stay in `~/.config/papertrade-ai` (mode 0600). [CLI guide](https://papertrade-ai.ninabrekkerese.workers.dev/docs/cli)
+
+## Tools
+
+| Tool | Access | What it does |
+| --- | --- | --- |
+| `get_markets` | public | Live Papertrade perp markets (BTC, ETH): Hyperliquid mark/bid/ask, 24h change, Papertrade 24h volume, open interest vs caps, max leverage, minimum trade size and whether each market is open. |
+| `get_price_chart` | public | OHLCV candles for BTC or ETH from Hyperliquid (the price source Papertrade settles against), with range stats and a TradingView link. |
+| `get_protocol_stats` | public | Papertrade protocol analytics: TVL, margin, LP, lifetime volume, open positions, fees, PAPER supply and staking, plus daily history (volume, trader PnL, liquidations, users). |
+| `get_liquidation_map` | public | Where open Papertrade positions get liquidated: notional and position count of longs and shorts by price bucket around the current price, with the largest clusters. |
+| `get_leaderboard` | public | Papertrade trader leaderboard for a time window, sortable by PnL, volume, balance and more. |
+| `get_top_trades` | public | The most profitable individual Papertrade positions in a window: who, market, side, leverage, entry, exit and PnL. |
+| `get_recent_trades` | public | The latest opens, closes and liquidations across all of Papertrade, optionally filtered by market or wallet. |
+| `get_account` | public | A Papertrade account: free balance, locked margin, equity, every open position with live estimated PnL, bust price and distance to liquidation, pending intents, session keys and lifetime stats. |
+| `get_trade_history` | public | Closed and liquidated positions for a wallet, newest first, with entry, exit, settled PnL, fees and PAPER minted. |
+| `get_portfolio_history` | public | Equity curve for a wallet over 1h, 1d, 1w or all time. |
+| `calculate_position` | public | Pure math for a hypothetical position: bust price, liquidation distance and settled PnL at a target exit, using the exchange formula (win curve, deadband, 2% win fee). |
+| `get_deposit_info` | public | How to fund a Papertrade account: the wallet's personal deposit proxy address (USDC on HyperCore spot), minimums, the activation fee, and the wallet's current HyperEVM USDC/HYPE balances. |
+| `get_trading_permissions` | public | What this connection may do: connected wallet, whether a trading session is active and when it expires, the guardrails the owner set, and how much of the daily limit is used. |
+| `preview_trade` | trading | Step 1 of 2 for opening a position. |
+| `open_position` | trading | Step 2 of 2: opens a real Papertrade position with the user's funds, signed by the delegated session key. |
+| `close_positions` | trading | Closes open positions at the market, signed by the session key. |
+| `cancel_intent` | trading | Cancels a submitted intent that is still queued (not yet executed). |
+| `get_intent_status` | public | Whether a submitted intent is still queued, has produced an open position, or is no longer pending. |
+
+Full inputs and annotations: [Tool reference](https://papertrade-ai.ninabrekkerese.workers.dev/docs/tools). Public tools also work over plain HTTPS:
+
+```bash
+curl https://papertrade-ai.ninabrekkerese.workers.dev/api/v1/tools/get_markets
+curl "https://papertrade-ai.ninabrekkerese.workers.dev/api/v1/tools/get_liquidation_map?market=ETH"
+```
+
+OpenAPI 3.1 at [`/openapi.json`](https://papertrade-ai.ninabrekkerese.workers.dev/openapi.json), ready for GPT Actions and agent frameworks. Unauthenticated MCP for read-only agents: `https://papertrade-ai.ninabrekkerese.workers.dev/public/mcp`.
+
+## Security
+
+- **Non-custodial.** Your wallet signs one EIP-712 `RegisterSessionKey` message, the same one the official Papertrade app signs for one-click trading. The session key is scoped by the exchange contract to open, close and cancel. It cannot withdraw or transfer.
+- **Guardrails in code, not in the prompt.** Margin per trade, leverage, rolling 24h position size, open positions and markets are checked on the server before any intent is signed.
+- **Preview, then confirm.** `open_position` needs a signed quote from `preview_trade` for the identical trade, valid for 3 minutes.
+- **Encrypted per app.** Each app's session key is encrypted with a key derived from that app's own access token.
+- **Revoke in one click** at [/account](https://papertrade-ai.ninabrekkerese.workers.dev/account).
+
+Read the full [security model](https://papertrade-ai.ninabrekkerese.workers.dev/docs/security). Report vulnerabilities privately: [SECURITY.md](SECURITY.md).
+
+## Develop and self-host
+
+```bash
+git clone https://github.com/nirholas/papertrade-ai && cd papertrade-ai
+npm install
+npm test           # unit tests
+npm run dev        # local Worker on http://127.0.0.1:8787
+```
+
+Deploy your own copy to Cloudflare Workers with one KV namespace and one secret: [Self-hosting](https://papertrade-ai.ninabrekkerese.workers.dev/docs/self-hosting). The package also exports the tool registry, policy engine and intent signing for use in your own agent: `import { TOOLS, runTool } from 'papertrade-ai'`.
+
+| Path | What |
+| --- | --- |
+| `src/tools/registry.ts` | Every tool: schema, annotations, implementation |
+| `src/core/` | Papertrade API client, EIP-712 intents, bust price math |
+| `src/worker/` | Cloudflare Worker: OAuth provider, MCP, REST, pages |
+| `src/cli.ts` | stdio server and `login` CLI |
+| `src/web/` | MCP Apps widget, connect and account pages |
+| `docs/` | Documentation (rendered to the website) |
+| `scripts/build-site.mjs` | Website, `llms.txt`, sitemap, discovery files, manifests |
+
+## Risk
+
+Papertrade positions use real USDC. At 1000x leverage a 0.1% move against you liquidates the position and the full margin is lost. Papertrade AI is independent open-source software, not affiliated with Papertrade, and not financial advice.
+
+## License
+
+[MIT](LICENSE)

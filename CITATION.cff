@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: If you use this software, please cite it as below.
+title: "papertrade-ai"
+abstract: "Trade Papertrade BTC and ETH perps from Claude, ChatGPT, Codex, Cursor, Gemini CLI and VS Code. MCP server with OAuth, non-custodial session keys and guardrails."
+license: MIT
+repository-code: "https://github.com/nirholas/papertrade-ai"
+url: "https://three.ws"
+authors:
+  - name: three.ws
+    website: "https://three.ws"
