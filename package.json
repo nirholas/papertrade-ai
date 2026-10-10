@@ -1,0 +1,87 @@
+{
+  "name": "papertrade-ai",
+  "version": "0.1.0",
+  "description": "Trade Papertrade perps from any AI: Claude, ChatGPT, Codex, Cursor, Gemini, VS Code. Remote and local MCP server with non-custodial session keys, user-set guardrails and preview-then-confirm trading.",
+  "type": "module",
+  "license": "MIT",
+  "author": "nirholas",
+  "mcpName": "io.github.nirholas/papertrade-ai",
+  "homepage": "https://papertrade-ai.ninabrekkerese.workers.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nirholas/papertrade-ai.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nirholas/papertrade-ai/issues"
+  },
+  "keywords": [
+    "papertrade",
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "perps",
+    "perpetual-futures",
+    "hyperliquid",
+    "hyperevm",
+    "trading",
+    "crypto-trading",
+    "ai-agent",
+    "claude",
+    "chatgpt",
+    "codex",
+    "cursor",
+    "gemini-cli",
+    "vscode",
+    "oauth"
+  ],
+  "bin": {
+    "papertrade-ai": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "server.json"
+  ],
+  "engines": {
+    "node": ">=20.10"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:assets": "node scripts/build.mjs --assets",
+    "dev": "node scripts/build.mjs && node scripts/build-site.mjs && wrangler dev",
+    "deploy": "node scripts/build.mjs && node scripts/build-site.mjs && wrangler deploy",
+    "typecheck": "node scripts/build.mjs --assets && tsc --noEmit -p . && tsc --noEmit -p tsconfig.web.json",
+    "test": "node scripts/build.mjs --assets && vitest run",
+    "test:live": "LIVE=1 vitest run test/live.test.ts",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build && npm run site",
+    "site": "node scripts/build-site.mjs",
+    "mcpb": "node scripts/build-mcpb.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "^2.0.3",
+    "@modelcontextprotocol/server": "^2.3.1",
+    "eventsource-parser": "^3.1.1",
+    "viem": "^2.57.4",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-oauth-provider": "^1.2.3",
+    "@cloudflare/workers-types": "^5.20261010.1",
+    "@resvg/resvg-js": "^2.6.2",
+    "@types/node": "^26.6.5",
+    "esbuild": "^0.27.7",
+    "marked": "^16.4.2",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7",
+    "wrangler": "^4.149.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "dist/index.js"
+}

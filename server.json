@@ -1,0 +1,54 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.nirholas/papertrade-ai",
+  "title": "Papertrade AI",
+  "description": "Trade Papertrade BTC and ETH perps from Claude, ChatGPT, Codex, Cursor and any MCP client.",
+  "version": "0.1.0",
+  "websiteUrl": "https://papertrade-ai.ninabrekkerese.workers.dev/",
+  "repository": {
+    "url": "https://github.com/nirholas/papertrade-ai",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://papertrade-ai.ninabrekkerese.workers.dev/icon-512.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    }
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "papertrade-ai",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "PAPERTRADE_WALLET",
+          "description": "Wallet address for read-only access without logging in.",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "string"
+        },
+        {
+          "name": "PAPERTRADE_PRIVATE_KEY",
+          "description": "Optional wallet key for headless trading. Only used to sign a session key registration; never stored.",
+          "isRequired": false,
+          "isSecret": true,
+          "format": "string"
+        }
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://papertrade-ai.ninabrekkerese.workers.dev/mcp"
+    }
+  ]
+}

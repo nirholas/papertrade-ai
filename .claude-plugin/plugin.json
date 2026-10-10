@@ -1,0 +1,20 @@
+{
+  "name": "papertrade-ai",
+  "version": "0.1.0",
+  "description": "Trade Papertrade BTC and ETH perps from Claude, ChatGPT, Codex, Cursor and any MCP client. Includes the remote MCP server, a trading skill and slash commands.",
+  "author": {
+    "name": "nirholas",
+    "url": "https://github.com/nirholas"
+  },
+  "homepage": "https://papertrade-ai.ninabrekkerese.workers.dev/",
+  "repository": "https://github.com/nirholas/papertrade-ai",
+  "license": "MIT",
+  "keywords": [
+    "papertrade",
+    "trading",
+    "perps",
+    "crypto",
+    "hyperevm",
+    "mcp"
+  ]
+}

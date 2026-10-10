@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist/types",
+    "rootDir": "src"
+  },
+  "include": ["src/index.ts"],
+  "exclude": ["src/web/*-client.ts", "src/web/wallets.ts", "src/worker", "src/cli.ts"]
+}

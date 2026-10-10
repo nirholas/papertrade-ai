@@ -1,0 +1,2 @@
+SERVER_SECRET=replace-with-output-of-openssl-rand-base64-48
+PUBLIC_URL=http://127.0.0.1:8787

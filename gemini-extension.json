@@ -1,0 +1,11 @@
+{
+  "name": "papertrade-ai",
+  "version": "0.1.0",
+  "description": "Trade Papertrade BTC and ETH perps from Claude, ChatGPT, Codex, Cursor and any MCP client.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "papertrade": {
+      "httpUrl": "https://papertrade-ai.ninabrekkerese.workers.dev/mcp"
+    }
+  }
+}

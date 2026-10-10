@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "papertrade-ai",
+  "main": "src/worker/index.ts",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "workers_dev": true,
+  "preview_urls": false,
+  "observability": { "enabled": true },
+  "assets": {
+    "directory": "public",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  },
+  "vars": {
+    "PUBLIC_URL": "https://papertrade-ai.ninabrekkerese.workers.dev"
+  },
+  "kv_namespaces": [{ "binding": "OAUTH_KV", "id": "765a0429d9d4465e83820cfd8981dc76" }]
+}
