@@ -37,6 +37,8 @@ npm run deploy
 
 `SERVER_SECRET` seals connect handles and signs trade quotes. Rotating it invalidates in-flight connects and previews only; connected apps keep working because their grants are encrypted with their own tokens.
 
+After a deploy, `npm run seo:indexnow` asks Bing, Yandex and the other IndexNow search engines to recrawl every page in your sitemap. On your own domain, first replace the key in `scripts/indexnow-key.mjs` with your own 32 hex characters (`openssl rand -hex 16`); the site build publishes it as `/<key>.txt` so the engines can verify ownership.
+
 ## Local development
 
 ```

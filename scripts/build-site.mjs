@@ -17,6 +17,7 @@ import { fileURLToPath } from 'node:url';
 import { Marked } from 'marked';
 import { Resvg } from '@resvg/resvg-js';
 import { z } from 'zod/v4';
+import { INDEXNOW_KEY } from './indexnow-key.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const out = join(root, 'public');
@@ -773,6 +774,7 @@ async function buildDiscovery(pages, ordered) {
     'sitemap.xml',
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${SITE}${u}</loc><lastmod>${TODAY}</lastmod><changefreq>${u === '/' ? 'daily' : 'weekly'}</changefreq><priority>${u === '/' ? '1.0' : u === '/privacy' ? '0.3' : '0.8'}</priority></url>`).join('\n')}\n</urlset>\n`,
   );
+  await write(`${INDEXNOW_KEY}.txt`, INDEXNOW_KEY);
   await write('robots.txt', `User-agent: *\nAllow: /\nDisallow: /authorize\nDisallow: /account/api\nDisallow: /token\nDisallow: /register\n\nSitemap: ${SITE}/sitemap.xml\n`);
   await write(
     'site.webmanifest',

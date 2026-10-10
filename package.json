@@ -57,7 +57,8 @@
     "test:live": "LIVE=1 vitest run test/live.test.ts",
     "prepublishOnly": "npm run typecheck && npm test && npm run build && npm run site",
     "site": "node scripts/build-site.mjs",
-    "mcpb": "node scripts/build-mcpb.mjs"
+    "mcpb": "node scripts/build-mcpb.mjs",
+    "seo:indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/ext-apps": "^2.0.3",
