@@ -324,6 +324,8 @@ const defaultHandler = {
       return withCors(json(openApiDocument(env.PUBLIC_URL), { headers: { 'cache-control': 'public, max-age=300' } }));
     if (pathname.startsWith('/api/')) return withCors(await restApi(request, env, url));
     if (pathname === '/healthz') return json({ ok: true, tools: TOOLS.length });
+    // Getting started is the docs home; its Markdown copy keeps the long name for llms.txt.
+    if (pathname === '/docs/getting-started' || pathname === '/docs/getting-started/') return Response.redirect(new URL('/docs/', url).toString(), 301);
     const asset = await env.ASSETS.fetch(request);
     if (asset.status !== 404) return siteResponse(asset, pathname);
     return html(messagePage('Not found', `Nothing lives at ${pathname}. Head to the home page for setup instructions.`, 'error'), undefined, 404);
