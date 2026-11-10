@@ -1,27 +1,15 @@
 {
   "name": "papertrade-ai",
   "owner": {
-    "name": "nirholas",
-    "url": "https://github.com/nirholas"
+    "name": "nirholas"
   },
-  "metadata": {
-    "description": "Papertrade AI plugins for Claude Code.",
-    "version": "0.1.0"
-  },
+  "description": "Trade Papertrade BTC and ETH perps from Claude, ChatGPT, Codex, Cursor and any MCP client. Includes the remote MCP server, a trading skill and slash commands.",
   "plugins": [
     {
       "name": "papertrade-ai",
-      "source": "./",
+      "source": "./plugins/papertrade-ai",
       "description": "Trade Papertrade BTC and ETH perps from Claude, ChatGPT, Codex, Cursor and any MCP client.",
-      "version": "0.1.0",
-      "category": "finance",
-      "keywords": [
-        "papertrade",
-        "trading",
-        "perps",
-        "mcp"
-      ],
-      "homepage": "https://papertrade-ai.ninabrekkerese.workers.dev/"
+      "category": "finance"
     }
   ]
 }
