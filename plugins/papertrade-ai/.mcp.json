@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "papertrade": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "papertrade-ai"
+      ],
+      "env": {
+        "PAPERTRADE_WALLET": "${PAPERTRADE_WALLET:-}"
+      }
+    }
+  }
+}
